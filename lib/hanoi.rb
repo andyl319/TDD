@@ -23,8 +23,8 @@ class Hanoi
   def play
     until won?
       begin
+        print "#{@first_col} \n #{@second_col} \n #{@third_col}"
         input = gets.chomp.split(",").map(&:to_i)
-        print input
         start, dest = input
         move(start, dest)
       rescue ArgumentError => e

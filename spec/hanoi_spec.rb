@@ -18,14 +18,18 @@ describe Hanoi do
     end
     it "throws an error if bigger disc is moved onto smaller disc" do
       hanoi.move(1,2)
-      print hanoi.second_col
-      print hanoi.first_col
       expect {hanoi.move(1,2)}.to raise_error("Bad move")
     end
   end
 
-  # describe "#play" do
-    # it "loops until won?" do
+  describe "#won" do
+    it "returns true when game is over?" do
+      hanoi.move(1,2)
+      hanoi.move(1,3)
+      hanoi.move(2, 3)
+      expect(hanoi.won?).to be true
+    end
+  end
 
 
 end
